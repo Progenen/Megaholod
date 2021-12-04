@@ -39,9 +39,14 @@
 }
 
 // Fonts
-@include font-face('Roboto', '../fonts/Roboto/Roboto-Bold', bold, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Bold', bold, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Medium', 500, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Regular', 400, normal, ttf);
 
 // Vars
+
+$color1: #28285A;
+$color2: #2B2B37;
 
 // Путь к спрайту для конкатенации
 

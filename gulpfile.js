@@ -23,7 +23,6 @@ function browsersync() {
     browserSync.init({
         server: {
             baseDir: dir,
-            index: "single-product.html"
         }
     });
 }
@@ -56,14 +55,15 @@ function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
         'src/JS/libs/popper.min.js',
+        'src/JS/libs/bootstrap.min.js',
         'src/JS/libs/jquery.validate.min.js',
-        'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/slick-carousel/slick/slick.min.js',
-        'node_modules/jquery-nice-select/js/jquery.nice-select.min.js',
         'src/JS/index.js'
     ])
+    .pipe(gulpIf(isDevelopment, sourcemaps.init())) // Инициализация source-maps (Работает только в режиме разработки) | Source-maps initialization (Only works in development mode)
     .pipe(concat('bundle.js'))
     .pipe(uglify())
+    .pipe(gulpIf(isDevelopment, sourcemaps.write())) // Запись source-maps (Работает только в режиме разработки) | Source-maps entry (Only works in development mode)
     .pipe(dest(dir + '/JS/'))
 }
 

@@ -46,6 +46,10 @@ footer {
         align-items: center;
     }
 
+    &__nav-wrapper {
+        z-index: 21;
+    }
+
     &__nav {
         display: flex;
         align-items: center;
@@ -71,9 +75,6 @@ footer {
             color: $color2;
             border-color: $color2;
         }
-    }
-
-    &__nav-dropwdown {
     }
 
     &__nav-dropwdown-toggle {
@@ -111,6 +112,7 @@ footer {
     }
 
     &__info {
+        text-align: right;
     }
 
     &__phone {
@@ -206,6 +208,11 @@ footer {
             }
         }
     }
+}
+
+.studio-logo__img {
+    max-width: 144px;
+    width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -336,6 +343,10 @@ footer {
             justify-content: center;
         }
     }
+
+    .logo__img {
+        max-width: 250px;
+    }
 }
 
 @media (max-width:480px){
@@ -367,6 +378,10 @@ footer {
     }
     .burger-menu {
         top: 0;
+    }
+
+    .studio-logo__img {
+        max-width: 110px;
     }
     
 }

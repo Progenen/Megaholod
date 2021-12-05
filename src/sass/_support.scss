@@ -42,6 +42,11 @@
 @include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Bold', bold, normal, ttf);
 @include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Medium', 500, normal, ttf);
 @include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Regular', 400, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-BoldItalic', Bold, italic, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Italic', 400, italic, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-MediumItalic', Medium, italic, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Light', 300, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-LightItalic', 300, italic, ttf);
 
 // Vars
 

@@ -153,8 +153,9 @@ footer {
     span{transition: all .3s;;top: 8px;left: 0px;position: absolute;width: 100%;height: 3px;background-color: $color2;
         &:first-child{top: 0px;}
         &:last-child{top: auto;bottom: 0px;}
+        pointer-events: none;
     }
-    &:not(.collapsed){
+    &.collapsed{
         span{transform: scale(0);background-color: $color2;
             &:first-child{transform: rotate(-45deg);top: 7px;}
             &:last-child{transform: rotate(45deg);bottom: 8px;}

@@ -48,8 +48,104 @@ footer {
     width: 100%;
 }
 
-.slick-prev__icon { 
+.slick-prev__icon {
     transform: rotateZ(180deg) translateX(11px);
+}
+
+// Map styles
+.ymap-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: url('../images/plumn.png') #fafafb no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+#map-yandex {
+    position: relative;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+}
+.loader {
+    position: absolute;
+    z-index: 15;
+    top: -100%;
+    left: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #000;
+    -webkit-transition: opacity 0.7s ease;
+    transition: opacity 0.7s ease;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+.loader:after,
+.loader:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loader.is-active {
+    top: 0;
+    opacity: 1;
+}
+.loader-default:after {
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 24px);
+    width: 48px;
+    height: 48px;
+    content: "";
+    -webkit-animation: rotation 1s linear infinite;
+    animation: rotation 1s linear infinite;
+    border: solid 8px #fff;
+    border-left-color: transparent;
+    border-radius: 50%;
+}
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes blink {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .navbar-main {
@@ -148,6 +244,66 @@ footer {
             text-decoration: underline;
             color: $color2;
         }
+    }
+}
+
+// contacts
+.contacts {
+    position: relative;
+    .ymap-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__body {
+        position: relative;
+        background: #fff;
+        padding: 54px 36px;
+        max-width: 440px;
+        margin: 100px 0 100px auto;
+        z-index: 2;
+    }
+
+    &__body-item {
+        margin: 30px 0 0 0;
+        &:first-child {
+            margin: 0 0 0 0;
+        }
+    }
+
+    &__body-item-title {
+        font-size: 20px;
+        color: $color2;
+        margin: 0 0 16px 0;
+    }
+
+    &__body-item-text {
+        font-size: 16px;
+        color: #4E4E4E;
+        font-style: normal;
+        padding: 0;
+        margin: 0;
+        &:hover {
+            color: #4E4E4E;
+            text-decoration: none;
+        }
+    }
+
+    &__body-phone {
+        font-size: 24px;
+        color: $color2;
+        margin: 30px 0 0 0;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+            color: $color2;
+        }
+    }
+
+    &__body-btn {
+        margin: 60px 0 0 0;
     }
 }
 
@@ -253,7 +409,7 @@ footer {
 
     &__hide {
         opacity: 0;
-        transition: .115s;
+        transition: 0.115s;
     }
 
     &__img {
@@ -291,7 +447,7 @@ footer {
         align-items: center;
         line-height: 150%;
         &:hover {
-            color: $color1
+            color: $color1;
         }
     }
 
@@ -308,7 +464,7 @@ footer {
         }
     }
 
-    &__link-icon  {
+    &__link-icon {
         margin: 3px 0 0 15px;
         fill: $color1;
         color: $color1;
@@ -496,7 +652,7 @@ footer {
     .navbar-main__nav-wrapper {
         top: 80px;
     }
-    
+
     .product__hide {
         opacity: 1;
     }

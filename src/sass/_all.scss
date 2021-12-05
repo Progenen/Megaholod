@@ -48,6 +48,10 @@ footer {
     width: 100%;
 }
 
+.slick-prev__icon { 
+    transform: rotateZ(180deg) translateX(11px);
+}
+
 .navbar-main {
     .row {
         align-items: center;

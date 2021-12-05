@@ -48,6 +48,32 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // home-partners slider 
+
+    if (document.querySelector('.home-partners__slider')) {
+        $('.home-partners__slider').slick({
+            slidesToShow: 4,
+            dots: false,
+            arrows: true,
+            prevArrow: `<button class="slick-prev slick-arrow home-partners__arrow"><svg class="home-partners__prev slick-prev__icon"><use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use></svg></button>`,
+            nextArrow: `<button class="slick-next slick-arrow home-partners__arrow"><svg class="home-partners__next slick-next__icon"><use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use></svg></button>`,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        })
+    } 
+
     // Adaptive 768
 
     if (window.screen.width < 768) {

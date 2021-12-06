@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // Burger menu (Header)
-    
+
     class MainMenu {
         constructor() {
             this.menu = document.querySelector('.main-menu');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.classList.remove('collapsed');
         }
 
-        render () {
+        render() {
             this.menuBtn.forEach(element => {
                 element.addEventListener('click', (e) => {
                     if (this.menu.classList.contains('show')) {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mainMenuInstance.render();
 
     // home-offer slider
-    
+
     if (document.querySelector('.home-offer__slider')) {
         $('.home-offer__slider').slick({
             slidesToShow: 1,
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         })
     }
-    
-    
+
+
     // map
     map('50.289497, 57.194027');
 
@@ -89,8 +89,66 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // Validation
+
+    $('#modalForm').validate({
+        rules: {
+            email: {
+                required: true,
+            },
+            name: {
+                required: true,
+            },
+            phone: {
+                required: true
+            },
+            terms: "required"
+        },
+        messages: {
+            email: "Ввведите корректный email",
+            name: "Введите корректное имя",
+            phone: "Введите корректный номер",
+            terms: ''
+        },
+        errorPlacement: function (error, element) {
+            if (element.attr("type") === "checkbox") {
+                error.insertAfter('');
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+    
+    $('#modalFormProduct').validate({
+        rules: {
+            email: {
+                required: true,
+            },
+            name: {
+                required: true,
+            },
+            phone: {
+                required: true
+            },
+            terms: "required"
+        },
+        messages: {
+            email: "Ввведите корректный email",
+            name: "Введите корректное имя",
+            phone: "Введите корректный номер",
+            terms: ''
+        },
+        errorPlacement: function (error, element) {
+            if (element.attr("type") === "checkbox") {
+                error.insertAfter('');
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    })
+
     // functions 
-    function map (center, image) {
+    function map(center, image) {
         if (document.querySelector("#map-yandex")) {
             //Переменная для включения/отключения индикатора загрузки
             var spinner = document.querySelector('.ymap-container .loader');
@@ -98,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var check_if_load = false;
             //Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
             var myMapTemp, myPlacemark;
-    
+
             //Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
             function init() {
                 myMapTemp = new ymaps.Map('map-yandex', {
@@ -126,23 +184,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     iconImageOffset: [-5, -38]
                 });
                 myMapTemp.geoObjects.add(myPlacemark)
-    
+
                 // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
                 var layer = myMapTemp.layers.get(0).get(0);
-    
+
                 // Решение по callback-у для определения полной загрузки карты
                 waitForTilesLoad(layer).then(function () {
                     // Скрываем индикатор загрузки после полной загрузки карты
                     spinner.classList.remove('is-active');
                 });
             }
-    
+
             // Функция для определения полной загрузки карты (на самом деле проверяется загрузка тайлов) 
             function waitForTilesLoad(layer) {
                 return new ymaps.vow.Promise(function (resolve, reject) {
                     var tc = getTileContainer(layer), readyAll = true;
                     Array.prototype.forEach.call(tc.tiles, function (tile) {
-                        console.log('foreach: ' + tile);  
+                        console.log('foreach: ' + tile);
                         if (!tile.isReady()) {
                             readyAll = false;
                         }
@@ -156,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             }
-    
+
             function getTileContainer(layer) {
                 for (var k in layer) {
                     if (layer.hasOwnProperty(k)) {
@@ -170,11 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 return null;
             }
-    
+
             // Функция загрузки API Яндекс.Карт по требованию (в нашем случае при наведении)
             function loadScript(url, callback) {
                 var script = document.createElement("script");
-    
+
                 if (script.readyState) {  // IE
                     script.onreadystatechange = function () {
                         if (script.readyState == "loaded" ||
@@ -188,22 +246,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         callback();
                     };
                 }
-    
+
                 script.src = url;
                 document.getElementsByTagName("head")[0].appendChild(script);
             }
-    
+
             // Основная функция, которая проверяет когда мы навели на блок с классом &#34;ymap-container&#34;
             var ymap = function () {
                 document.querySelector('.ymap-container').addEventListener('mouseenter', function () {
                     if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
-    
+
                         // Чтобы не было повторной загрузки карты, мы изменяем значение переменной
                         check_if_load = true;
-    
+
                         // Показываем индикатор загрузки до тех пор, пока карта не загрузится
                         spinner.classList.add('is-active');
-    
+
                         // Загружаем API Яндекс.Карт
                         loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9c9066f4-2079-4b71-b871-46dbea21ece3", function () {
                             // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;map-yandex&#34;
@@ -211,16 +269,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
                 });
-                
+
                 document.querySelector('.ymap-container').addEventListener('click', function () {
                     if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
-    
+
                         // Чтобы не было повторной загрузки карты, мы изменяем значение переменной
                         check_if_load = true;
-    
+
                         // Показываем индикатор загрузки до тех пор, пока карта не загрузится
                         spinner.classList.add('is-active');
-    
+
                         // Загружаем API Яндекс.Карт
                         loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9c9066f4-2079-4b71-b871-46dbea21ece3", function () {
                             // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;map-yandex&#34;
@@ -229,8 +287,47 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             }
-    
+
             ymap();
         }
     }
+
+
+    // Thanks window
+
+    let thanksModal = new bootstrap.Modal(document.getElementById('modalThanks'), {
+        keyboard: true
+    })
+    let modalForm = new bootstrap.Modal(document.getElementById('modal1'), {
+        keyboard: true
+    })
+
+    document.querySelector('#modalForm').addEventListener( 'submit', function( event ) {
+        event.preventDefault();
+        modalForm.hide();
+        thanksModal.show();
+        setTimeout(() => {
+            thanksModal.hide();
+        }, 5000)
+      }, false );
+
+
+    // Category
+    
+    $(".catalog__category-title").on("click", function(){
+        $(this).toggleClass("active")
+        $(this).next().slideToggle(400)
+    });
+
+    // Products modal
+
+    const productModal = document.querySelector("#modalProduct");
+
+    productModal.addEventListener('show.bs.modal', (e) => {
+        let btn = e.relatedTarget;
+        let content = btn.getAttribute('data-bs-whatever')
+        const modalInput = productModal.querySelector('#service');
+
+        modalInput.value = content;
+    })
 });

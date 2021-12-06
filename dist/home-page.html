@@ -28,7 +28,7 @@
                                     <ul class="navbar-main__nav">
                                         <li class="navbar-main__nav-item navbar-main__nav-dropwdown nav-item dropdown">
                                             <a class="navbar-main__nav-link navbar-main__nav-dropwdown-toggle nav-link dropdown-toggle"
-                                                href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close='outside'
                                                 aria-expanded="false">
                                                 <div class="burger-mini"><span></span><span></span><span></span></div>
                                                 Каталог продукции
@@ -52,8 +52,7 @@
                             <div class="col-lg-3 offset-lg-0 col-md-4 offset-md-2 col-sm-6 offset-sm-0 navbar-main__mob-col">
                                 <div class="navbar-main__info text-right d-flex flex-column justify-content-end">
                                     <a href="tel:#" class="navbar-main__phone">+7 (777) 707-37-97</a>
-                                    <a href="#" class="navbar-main__modal modal-btn" data-bs-toggle="modal"
-                                        data-bs-target="#modal1">Заказать звонок</a>
+                                    <a href="#" class="navbar-main__modal modal-btn" data-bs-toggle="modal"  data-bs-target="#modal1">Заказать звонок</a>
                                 </div>
                                 <div class="burger-menu main-menu-btn">
                                     <span></span>
@@ -306,7 +305,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -330,7 +329,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -354,7 +353,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -378,7 +377,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -402,7 +401,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -426,7 +425,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -450,7 +449,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -474,7 +473,7 @@
                                         <span class="product__link-text">Подробнее</span>
                                     </a>
                                     <a href="#" class="product__link ">
-                                        <span class="product__link-text">Узнать цену</span>
+                                        <span class="product__link-text" data-bs-toggle="modal" data-bs-target="#modal1">Узнать цену</span>
                                         <svg class="product__link-icon">
                                             <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
                                         </svg>
@@ -635,10 +634,10 @@
                     <div class="loader loader-default"></div>
                     <div id="map-yandex"></div>
                 </div>
-                <div class="container">
+                <div class="container contacts__container">
                     
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 contacts__col">
                         <div class="contacts__body">
                             <div class="contacts__body-item">
                                 <div class="contacts__body-item-title">
@@ -667,7 +666,7 @@
                             <div class="contacts__body-item">
                                 <a href="telto:#" class="contacts__body-phone">+7 (812) 407-37-93</a>
                             </div>
-                            <a href="#" class="contacts__body-btn main-btn main-btn_long">
+                            <a href="#" class="contacts__body-btn main-btn main-btn_long" data-bs-toggle="modal" data-bs-target="#modal1">
                                 <span class="main-btn__text">Оставить заявку</span>
                                 <svg class="home-offer__btn-icon main-btn__icon">
                                     <use xlink:href='svg/dest/stack/sprite.svg#arrow-left'></use>
@@ -692,7 +691,7 @@
                         <div class="navbar-main__nav-wrapper footer__nav-wrapper">
                             <ul class="navbar-main__nav footer__nav">
                                 <li class="footer__nav-item navbar-main__nav-item navbar-main__nav-dropwdown nav-item dropdown">
-                                  <a class="footer__nav-link navbar-main__nav-link footer__nav-dropdown-toggle navbar-main__nav-dropwdown-toggle nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <a class="footer__nav-link navbar-main__nav-link footer__nav-dropdown-toggle navbar-main__nav-dropwdown-toggle nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close='outside' aria-expanded="false">
                                     <div class="burger-mini"><span></span><span></span><span></span></div>
                                     Каталог продукции
                                   </a>
@@ -731,6 +730,60 @@
                   </div>
               </div>
         </footer>
+    </div>
+    <div class="modal-call modal fade" id="modal1">
+        <div class="modal-call__dialog modal-dialog modal-dialog-centered">
+            <div class="modal-call__content modal-content">
+                <div class="modal-call__header modal__header">
+                    <div class="modal-call__close modal__close" data-bs-dismiss="modal">
+                        <svg class="modal-call__close-icon modal__close-icon">
+                            <use xlink:href='svg/dest/stack/sprite.svg#cross'></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="modal-call__body modal__body">
+                    <h2 class="modal-call__title modal__title main-title">
+                        ОСТАВИТЬ ЗАЯВКУ
+                    </h2>
+                    <div class="modal-call__form">
+                        <form action="#" id="modalForm">
+                            <input class="modal-call__form-input main-input" id="name" name="name" type="text" placeholder="Ваше имя">
+                            <input class="modal-call__form-input main-input" id="phone" name="phone" type="phone" placeholder="Ваш номер телефона">
+                            <input class="modal-call__form-input main-input" id="email" name="email" type="email" placeholder="Ваша почта">
+                            <div class="modal-call__check checkbox-wrapper">
+                                <input class="modal-call__form-input checkbox" id="terms" name="terms" type="checkbox">
+                                <label for="check" class="checkbox-label">
+                                </label>
+                                <span class="modal-call__form-label">
+                                    Оставляя заявку на сайте, Вы соглашаетесь на <a href="#">обработку персональных данных</a>
+                                </span>
+                            </div>
+                            <button class="modal-call__form-btn main-btn main-btn_long" type="submit">Оставить заявку</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-thanks modal fade" id="modalThanks">
+        <div class="modal-thanks__dialog modal-dialog modal-dialog-centered">
+            <div class="modal-thanks__content modal-content">
+                <div class="modal-thanks__body modal__body">
+                    <svg class="modal-thanks__img">
+                        <use xlink:href='svg/dest/stack/sprite.svg#done'></use>
+                    </svg>
+                    <h3 class="modal-thanks__title">
+                        Успешно оформлено!
+                    </h3>
+                    <p class="modal-thanks__text">
+                        Ваш заказ успешно оформлен! Спасибо что выбрали именно нас.
+                    </p>
+                    <a data-bs-dismiss="modal" href="#" class="modal-thanks__btn main-btn main-btn_long">
+                        Вернуться на главную
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="JS/bundle.js"></script>
 </body>

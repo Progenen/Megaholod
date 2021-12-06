@@ -126,6 +126,10 @@
 .home-products {
     padding: 100px 0;
 
+    &__title {
+        margin-bottom: 60px;
+    }
+
     &__items {
 
     }
@@ -362,6 +366,10 @@
         &__content {
             font-size: 18px;
         }
+    }
+
+    .home-products__title {
+        margin-bottom: 30px;
     }
 }
 

@@ -216,6 +216,9 @@ footer {
 
     &__nav-dropwdown-menu {
         position: absolute;
+        padding: 0;
+        width: 300px;
+        border-radius: 0;
     }
 
     &__info {
@@ -244,6 +247,11 @@ footer {
             text-decoration: underline;
             color: $color2;
         }
+    }
+
+    &__categories {
+        max-width: 300px;
+        width: 100%;
     }
 }
 
@@ -920,6 +928,10 @@ footer {
 
         &__info {
             margin-right: 50px;
+        }
+
+        &__categories {
+            display: block !important;
         }
     }
 

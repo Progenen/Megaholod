@@ -300,17 +300,19 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     let modalForm = new bootstrap.Modal(document.getElementById('modal1'), {
         keyboard: true
+    });
+    let modalFormProduct = new bootstrap.Modal(document.getElementById('modalProduct'));
+
+    document.querySelectorAll('form').forEach(element => {
+        element.addEventListener('submit', function( event ) {
+            modalForm.hide();
+            modalFormProduct.hide();
+            thanksModal.show();
+            setTimeout(() => {
+                thanksModal.hide();
+            }, 5000)
+        })
     })
-
-    document.querySelector('#modalForm').addEventListener( 'submit', function( event ) {
-        event.preventDefault();
-        modalForm.hide();
-        thanksModal.show();
-        setTimeout(() => {
-            thanksModal.hide();
-        }, 5000)
-      }, false );
-
 
     // Category
     

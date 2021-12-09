@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // map
-    map('50.289497, 57.194027');
+    map();
 
     // Adaptive 768
     if (window.screen.width < 768) {
@@ -148,8 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // functions 
-    function map(center, image) {
+    function map(image) {
         if (document.querySelector("#map-yandex")) {
+            
+            const mapSelector = document.querySelector('#map-yandex');
             //Переменная для включения/отключения индикатора загрузки
             var spinner = document.querySelector('.ymap-container .loader');
             //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
@@ -162,8 +164,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 myMapTemp = new ymaps.Map('map-yandex', {
                     // При инициализации карты обязательно нужно указать
                     // её центр и коэффициент масштабирования.
-                    center: center, // Москва
-                    zoom: 17,
+                    center: mapSelector.getAttribute('data-map-pos').split(', '), // Москва
+                    zoom: mapSelector.getAttribute('data-map-zoom'),
                     controls: []
                 }, {
                     searchControlProvider: 'yandex#search'

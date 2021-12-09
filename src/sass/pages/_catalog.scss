@@ -72,16 +72,10 @@
         opacity: .6;
         font-weight: 400;
         line-height: 150%;
-        &.active {
+        &:hover {
             text-decoration: underline;
             opacity: 1;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-        &:hover {
             color: $color2;
-            text-decoration: none;
         }
     }
 

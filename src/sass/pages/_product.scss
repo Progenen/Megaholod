@@ -1,4 +1,4 @@
-.product {
+.product-page {
     padding: 0 0 100px 0;
     &__img-wrapper {
         background: #f8f8f8;
@@ -60,7 +60,7 @@
 }
 
 @media (max-width:992px){
-    .product {
+    .product-page {
         padding: 0 0 50px 0;
         &__img {
             max-height: mn;
@@ -72,7 +72,7 @@
 }
 
 @media (max-width:576px){
-    .product {
+    .product-page {
         &__title {
             margin-bottom: 20px;
             font-size: 32px;
